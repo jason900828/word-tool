@@ -7,7 +7,7 @@ require_once(dirname(__FILE__) . "/config.php");
 $infor = array();
 $getname = $_GET['getName'];
 
-$json_string= file_get_contents("name.json");
+$json_string= file_get_contents("edit.json");
 
 $content = json_decode($json_string,true);
 foreach ($content["button"] as $key) 

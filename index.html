@@ -1,170 +1,58 @@
-<html><head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
- 
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-51392658-9');
-  </script>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>專案服務清單</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="./Sortable.min.js"></script>
 
-  
-  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 
-    <meta charset="utf-8">
-    <title>專案服務清單</title>
-    <meta name="description" content="">
 
-    <meta name="image" content="meta.png">
-
-    <meta itemprop="name" content="專案服務清單">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="">
-
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="專案服務清單">
-    <meta name="twitter:description" content="">
-    <meta name="twitter:creator" content="@AndreyAzimov">
-    <meta name="twitter:image:src" content="">
-
-    <meta name="og:title" content="專案服務清單">
-    <meta name="og:description" content="">
-    <meta name="og:image" content="">
-    <meta name="og:site_name" content="專案服務清單">
-    <meta name="og:type" content="website">
 
 <link rel="shortcut icon" href="https://www.sheet2site.com/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://www.sheet2site.com/img/favicon.ico" type="image/x-icon">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.0.min.js"></script>  
-
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-
 <link href="https://fonts.googleapis.com/css?family=Barlow:300,400,500,600,700" rel="stylesheet">
 
-  <style>
-
-  * {
-    font-family: "Barlow";
-  }
-
-  body {
-    margin: 0;
-  }
-  
-  html {
-    box-sizing: border-box;
-    height: 100%;
-  }
-
-  *,
+<style type="text/css">
+html, body {
+  height: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+ *,
   *:before,
   *:after {
     box-sizing: inherit;
   }
+.content {
+  min-height: 100%;
+}
+.content_inside {
+  padding: 40px;
+  padding-bottom: 100px;
+}
+.footer {
+  height: 100px;
+  margin-top: -100px;
+  background-color: #333;
+  color:#eee;
+  text-align: center;
+  font-size: 16px;
+  height: 100px; 
+}
 
-  .logo {
-    position: absolute;
-    left: 30px;
-    top: 30px;
-    border: none;
-    box-shadow: none;
-    width: 200px;
-    height: 70px;
-    z-index: 999;
+.footer span{
+  line-height: 100px;
+}
 
-    
-  }
-
-  #banner{
-    position: relative;
-    text-align: center;
-    /*background-image: url("");*/
-    background-size: cover;
-    width:  100%;
-    
-    min-height: 80vh;
-    display: inline-flex;
-    flex-direction: column;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 50px; 
-
-
-  }
-
-  .banner-text{
-    max-width: 1200px;
-    color: white;
-    z-index: 99999999;
-/*    margin-top: 10%;
-    margin-bottom: 5%;*/
-
-  }
-
-  .banner-text > *:not(last-child) {
-    margin-bottom: 25px; /* например */
-  }
-
-  .dimmer {
-    position:absolute;
-    width:100%;
-    height:70%;
-    left:0;
-    top:0;
-    
-    background-color: rgba(
-      
-      16,
-      15,
-      15,
-      0.3);
-  
-    z-index:1;
-  }
-
-  #myInput {
-
-    background-image: url('https://www.w3schools.com/css/searchicon.png');
-    background-position: 10px 12px;
-    background-repeat: no-repeat;
-    width: 15%;
-    font-size: 16px;
-    padding: 12px 20px 12px 40px;
-    border: 1px solid #ddd;
-    margin-bottom: 12px;
-    border-radius: 5px;
-    position: absolute;
-    right: 10px;
-
-
-
-  }
-
-
-  .form {
-    padding-top: 25px;
-    margin-bottom: 25px;
-   /* padding-bottom: 200px;*/
-
-    display: none;
-
-  }
-
-.sort {
-  }
-
-  .typewrite {
-    margin: 50px;
-  }
-
-  h1{
+h1{
     font-size: 4.0em;
+    font-weight:800;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.35);
     margin-top: 0;
     max-width: 1100px;
+    margin-bottom:0;
   }
 
   h2{
@@ -173,18 +61,23 @@
   }
 
 
+  h3 {
+    font-weight:100;
+    margin-top: 3vh;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+    font-weight: 570;
+  }
 
   a:hover {
-      text-decoration: underline;
+    color: #6f6f6f;
+    text-decoration: none;
   }
 
-  .img-card{
 
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-
-  }
 
   #cards {
     margin-top: 40px;
@@ -194,9 +87,6 @@
 
 
   .card {
-
-    
-
 
     position: relative;
     width: 260px;
@@ -285,153 +175,11 @@
     border-radius:50%;
     background-image:url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUyIDUyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MiA1MjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIzMnB4IiBoZWlnaHQ9IjMycHgiPgo8cGF0aCBkPSJNMjYsMEMxMS42NjQsMCwwLDExLjY2MywwLDI2czExLjY2NCwyNiwyNiwyNnMyNi0xMS42NjMsMjYtMjZTNDAuMzM2LDAsMjYsMHogTTM4LjUsMjhIMjh2MTFjMCwxLjEwNC0wLjg5NiwyLTIsMiAgcy0yLTAuODk2LTItMlYyOEgxMy41Yy0xLjEwNCwwLTItMC44OTYtMi0yczAuODk2LTIsMi0ySDI0VjE0YzAtMS4xMDQsMC44OTYtMiwyLTJzMiwwLjg5NiwyLDJ2MTBoMTAuNWMxLjEwNCwwLDIsMC44OTYsMiwyICBTMzkuNjA0LDI4LDM4LjUsMjh6IiBmaWxsPSIjRkZEQTQ0Ii8+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=);
   }
-
-
-  .by{
-    text-align: center;
-    color: black;
-    font-size: 1.25em;
-    line-height: 0.1em;
-    padding-bottom: 20px;
-  }
-
-  a {
-    color: black;
-    text-decoration: none;
-    font-weight: 570;
-  }
-
-  a:hover {
-    color: #6f6f6f;
-    text-decoration: none;
-  }
-
-  #contact {
-      position: fixed;
-      text-align: center;
-      z-index: 10;
-      right: 30px;
-      bottom: 30px;
-      text-shadow: 1px 1px 1px rgba(0,0,0,0.35);
-      border-radius: 50%;
-      border-width: 4px;
-      width:100px;
-      height:100px;
-  }
-  #contact:hover {
-    transform: scale(1.05);
-    -webkit-transition: .3s ease-in-out;
-    transition: .3s ease-in-out;
-  }
-  
-  #img-circle {
-
-    width: 70px;
-    border-radius: 100%
-
-  }
-
-  #contact {
-    background-size:cover;
-    background-position: center center;
-  }
-  #contact-2 {
-      display: inline-block;
-      text-align: center;
-      z-index: 3;
-      right: 30px;
-      bottom: 30px;
-      text-shadow: 1px 1px 1px rgba(0,0,0,0.35);
-
-  }
-
-  #img-circle-2 {
-    vertical-align: middle;
-    margin-left: 0.5em;
-    display: inline-block;
-    width: 150px;
-    border-radius: 100%;
-
-  }
-
-  #img-circle-2:hover {
-    transform: scale(1.05);
-    -webkit-transition: .3s ease-in-out;
-    transition: .3s ease-in-out;
-  }
-
-
-  .btn {
-    font-size: 1.3em;
-    font-weight:600;
-    color:rgb(100,100,100);
-    border: none;
-    outline: none;
-    padding:0.5em;
-    padding-left:1em;
-    padding-right:1em;
-    text-transform:uppercase;
-    background-color: white;
-    cursor: pointer;
-    border:1px solid #ccc;
-    border-style: solid;
-    border-radius: 5px;
-    margin:0.65em;
-    display:inline-block;
-    line-height:2;
-  }
-
-  .btn:hover, .active {
-    background-color:rgb(214,214,214);
-  }
-
   .show {
     display: inline-block;
   }
 
-  #myBtnContainer {
-    
-    color: white;
-    z-index: 5;
-    bottom: 1em;
-    width:100%;
-    text-align:center;
-    left:0;
-  }
-
-  .myBtnContainerBox {
-
-    
-    width:100%;
-    max-width:12
-    00px;
-    margin:0 auto;
-  }
-
-  h1 {
-    font-weight:800;
-    margin-bottom:0;
-  }
-  h3 {
-    font-weight:100;
-    margin-top: 3vh;
-  }
-
-  .box {
-      background: red;
-      height: 200px;
-      width: 200px;
-      display: inline-block;
-  }
-
-  .shumniy-fix {
-    display: inline-block;
-    margin-bottom: 70px;
-  }
-
   .about {
-    padding-left: 7%;
-    padding-right: 7%;
     color: black;
     font-size: 1.25em;
   }
@@ -446,9 +194,7 @@
     font-size: 1.5em;
     text-align: justify;
   }
-
-
-  @media screen and (max-width: 1020px) {
+@media screen and (max-width: 1020px) {
 
       #banner{
           min-height: 43vh;
@@ -480,7 +226,7 @@
       }
   }
 
-    .description-header {
+    .-header {
       max-width: 700px;
       font-size: 1.8em;
       font-weight: 500;
@@ -488,131 +234,35 @@
       margin-right: auto;
     }
 
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      z-index: 2;
-    }
-
-    .navbar > *:not(:last-child),
-    .navbar-section > *:not(:last-child) {
-      margin-right: 2rem;
-    }
-
-    .navbar-link {
-      color: white;
-      text-decoration: none;
-      font-size: 1.5rem;
-    }
-
-    .selected {
-      color: white;
-      border-bottom: 2px solid white;
-    }
-
-    a.selected:hover {
-      color: white;
-    }
-
-    .not-selected {
-      color: #dad7d7;
-    }
-
-    a.not-selected:hover {
-      text-decoration: none;
-      border-bottom: 2px solid white;
-      color: white;
-    }
-
-
-
   </style>
-
-
-<script src="./Sortable.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-
 
 </head>
 <body>
-
-
-
-<!--
-<section id="banner" data-blink-id="tqcns828rs430dbw5xsir">
--->
-<!--   <nav class="navbar">
-    <div class="navbar-section">
-      <a class="navbar-link selected" href="#">Home</a>
+  <div class="content">
+    <div class='header'>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+        <a class="navbar-brand" href=""><img src="icon.png" width="30" height="30" class="d-inline-block align-top" alt=""> 專案服務清單</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="./add_buttom.html">新增按鈕 </a>
+            </li>
+          </ul>
+        </div>  
+      </nav>
     </div>
-
-    <div class="navbar-section">
-      <a class="navbar-link not-selected" href="#">Cafe</a>  
-      <a class="navbar-link not-selected" href="#">City Walk</a>
+    <div class="content_inside">
+      <ul id="cards" >
+        
+      </ul>
     </div>
-  </nav> -->
- <!--  <img class="logo" src=" soon "> -->
-     <!--<div class="banner-text">
-          <h1>文字工具組</h1>
-          <h2 class="description-header"></h2>
-
-          
-          <form class="form" action="">
-            <input class="button" type="submit" value=""> 
-          </form>
-
-      </div>
-  <div class="dimmer"></div>
-
-
-
-
- 
-</section>
--->
-
-  <div class="about">
-
-      <h2 class="about-h2"> 專案服務清單 </h2>
-      <p class="about-p">  </p>
-      
   </div>
-
-<div id="myBtnContainer">
-</div> 
-
-<!--   <div class="sort">
-    <button id="alphBnt" class="btn"></button><button id="numBnt" class="btn"></button> 
-  </div>  -->
+  <script src="./ajax.js" ></script>
 
 
-<!--
-  此區新增工具-------------------------------------------------------------------------------------------------------------------------------------------------------
--->
-
-  <div align="center">
-   
-      <button class="btn btn-success" onclick="location.href='./add_buttom.html'" style="color:#00AA00;" value = ''>新增按鈕請按此</button>
-      <br>
-      <br>
-      <input type="button"  class="btn btn-outline-secondary" value="儲存變更" onclick="record_sort(0,'yo')">
-    
-  </div>
-<div>
-  <div id  = 'area'>
-
-     <ul id="cards">
-       
-     </ul>
-  
-
-  </div>
-
-<script src="./ajax.js" ></script>
-
-</div>
-  
 
 <script>
   var el = document.getElementById('cards');
@@ -621,7 +271,7 @@
       // 參數設定[註1]
       disabled: false, // 關閉Sortable
       animation: 150,  // 物件移動時間(單位:毫秒)
-      handle: "#area",  // 可拖曳的區域
+      handle: ".content_inside",  // 可拖曳的區域
       filter: ".ignore",  // 過濾器，不能拖曳的物件
       preventOnFilter: true, // 當過濾器啟動的時候，觸發event.preventDefault()
       draggable: ".gb_T",  // 可拖曳的物件
@@ -631,35 +281,43 @@
     });
 </script>
 <script>
-
 function clickBtn(event,name){
         event.preventDefault();
         //終止事件傳導
         event.stopPropagation();
         var name2 = name.id;
-        record_sort(1,name2);
-        //window.location.href="./button_infor.html?name="+name2;   
+        //record_sort(1,name2);
+        window.location.href="./button_infor.html?name="+name2;   
     }
 
-function record_sort(action,name){
-  var li_arr = document.getElementsByClassName('gb_T');
-  var url_ = "./record.php?action="+action+"&name="+name+"&sort=";
-  
-  for (var i=0;i<li_arr.length;i++)
-  {
-    if (i==0)
-    {
-            url_ = url_+li_arr[i].id;
-    }
-    else
-    {
-            url_ = url_+","+li_arr[i].id;
-    }    
-  }
-  window.location.href=url_;
-}
+
 </script>   
+<script type="text/javascript">
+  var url_ = './record.php?action=2&name=1&sort=';
+  $(window).on('beforeunload',function () {
+    var il_arr = $( ".gb_T" );
+    for (var i=0;i<il_arr.length;i++)
+    {
+      if (il_arr[i].id == ''){
+        break;
+      }
+      if (i==0)
+      {
+        url_ = url_+il_arr[i].id;
+      }
+      else
+      {
+        url_ = url_+","+il_arr[i].id;
+      }    
+    }
 
+   $.ajax({
+     type: 'GET',
+     async: false,
+     url: url_
+   });
+});
+</script>
 <script>
   // 點擊button的方法
     
@@ -696,31 +354,7 @@ function w3RemoveClass(element, name) {
 }
 
 
-// Add active class to the current button (highlight it)
-/*var btnContainer = document.getElementById("myBtnContainer");
-var btns = btnContainer.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function(){
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
-}
-
-
-// Add active class to the current button (highlight it)
-var btnContainer = document.getElementById("myBtnContainer");
-var btns = btnContainer.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function(){
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
-}
-*/
-
 </script>
-
-
-</a></div></body></html>
+  <footer class="footer"><span>製作日期 2019/01/24</span></footer>
+</body>
+</html>

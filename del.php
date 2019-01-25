@@ -5,7 +5,7 @@ header("Content-Type:text/html; charset=utf-8");
 require_once(dirname(__FILE__) . "/config.php");
 
 
-$json= file_get_contents("./name.json");
+$json= file_get_contents("./edit.json");
 $content = json_decode($json,true);
 
 $txt_n = $_GET["del_name"];
@@ -28,7 +28,7 @@ foreach ($content['button'] as $key)
     $i+=1;
 }
 $data = json_encode($content);
-file_put_contents( './name.json' , $data);
+file_put_contents( './edit.json' , $data);
 
 header("Location: ./index.html");
 

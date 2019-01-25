@@ -31,13 +31,13 @@ function uploadfile($file_id,$uploaddir,$file_name){
 
 $complete = 0;
 
-$json = file_get_contents("./name.json");
+$json = file_get_contents("./edit.json");
 $content = json_decode($json,true);
 
 $txt_n = $_POST["buttom_name"];
 $txt_n = str_replace(' ', '_', $txt_n);
 $txt_u = $_POST["buttom_url"];
-$txt_i = $_FILES["my_image"]['name'];
+$txt_i = str_replace(' ', '_',$_FILES["my_image"]['name']);
 
 $check = 1;
 foreach ($content['button'] as $key) 
@@ -60,29 +60,28 @@ foreach ($content['button'] as $key)
         break;
     }
 }
-
-if((uploadfile("my_image","./picture/",$_FILES["my_image"]['name']))&&$check)
+if($check)
 {
-    $new_button_str = ",{
-        \"name\":\"$txt_n\",
-        \"url\":\"$txt_u \",
-        \"image\":\"$txt_i\"
-    }";
-    $data = substr($json,0,-2).$new_button_str."]}";
-    file_put_contents( './name.json' , $data);
-    echo "成功!!<br/>";
-    $complete = 1;
+    if((uploadfile("my_image","./picture/",$txt_i)))
+    {
+        $new_button_str = ",{
+            \"name\":\"$txt_n\",
+            \"url\":\"$txt_u \",
+            \"image\":\"$txt_i\"
+        }";
+        $data = substr($json,0,-2).$new_button_str."]}";
+        file_put_contents( './edit.json' , $data);
+        echo "成功!!<br/>";
+        $complete = 1;
+    }
+    else
+    {
+        echo "新增失敗!!<br/>";
+    }
+
+    if($complete)
+    {
+        header("Location: ./index.html");
+    }
 }
-else
-{
-    echo "新增失敗!!<br/>";
-}
-
-if($complete)
-{
-    header("Location: ./index.html");
-}
-
-
-
 ?>

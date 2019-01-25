@@ -1,4 +1,7 @@
 var d ;
+
+
+
 $.ajax({
     url: "add_buttom.php",
     type: "POST",
@@ -6,14 +9,14 @@ $.ajax({
     contentType: false,
     cache: false,
     processData:false,
+    async: true,
     success: function(data){
         d = data;
         $("#cards").html(d);
-        
-    },
-            
+    },        
     error: function(){
         alert("error");
     }             
 });
-    
+
+

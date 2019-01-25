@@ -31,14 +31,14 @@ function uploadfile($file_id,$uploaddir,$file_name){
 
 $complete = 0;
 
-$json= file_get_contents("./name.json");
+$json= file_get_contents("./edit.json");
 $content = json_decode($json,true);
 
 $txt_org = $_POST["buttom_org"];
 $txt_n = $_POST["buttom_name"];
 $txt_n = str_replace(' ', '_', $txt_n);
 $txt_u = $_POST["buttom_url"];
-$txt_i = $_FILES['my_image']['name'];
+$txt_i = str_replace(' ', '_',$_FILES["my_image"]['name']);
 
 if($txt_i){
     if(uploadfile('my_image',"./picture/",$txt_i))
@@ -92,7 +92,7 @@ foreach ($content['button'] as $key)
     $i+=1;
 }
 $data = json_encode($content);
-file_put_contents( './name.json' , $data);
+file_put_contents( './edit.json' , $data);
 if ($complete == 3)
 {
     header("Location: ./index.html");
